@@ -1,0 +1,24 @@
+*{
+     margin: 0;
+     padding: 0;
+     text-align: center;
+}
+
+#head{
+     background-color: rgb(137, 157, 211);
+}
+
+.space{
+ 
+ 
+
+}
+
+img{
+     height:80px;
+     width: 90px;
+     border:2px solid black;
+     padding:0 8px 0;
+     margin-left: 10px;
+         
+}
