@@ -15,7 +15,7 @@ img{
      width: 90px;
      border:2px solid black;
      padding:2px 10px 2px;
-     margin-left: 18px;
+     margin-left: 10px;
          
 }
 
@@ -23,4 +23,10 @@ img:hover{
      border:2px solid rgb(240, 185, 6);
      cursor: pointer;
      
+}
+
+/* Align all code-image pics to left */
+.code-img, .code1{
+     display: flex;
+     align-items: flex-start;
 }
