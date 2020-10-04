@@ -1,27 +1,23 @@
-function code(){
-     var img = document.getElementsByTagName("img");
-    var pic = document.getElementById("gallary");
-     var codey = '';
+let codeString = "";
+let maxlength = 15;
 
+document.querySelectorAll('.image').forEach((element,index) => {
+     element.addEventListener('click',(event)=>{
+          event.preventDefault();
+          if(codeString.length<maxlength){
+               subcode = (event.target.id);
+               codeString = codeString.concat(subcode);
+               let appendCode = document.createElement('p');
+               appendCode.innerHTML = codeString;
+               document.querySelector('.code1').appendChild(appendCode);
+               let image = document.createElement('img');
+               image.src = element.src;
+               document.querySelector('.code-img').appendChild(image);
 
-    
-     
-     for(i=0;i<img.length;i++){
-
-        
-       if(img[i].click ){
-            console.log("True");
-      //    var imgcode = img[i].alt;
-        
-        // var codey = codey+ imgcode;
-          //console.log(codey);
-         // document.getElementById('code1').innerHTML = codey;
           }
-          else{
-              
-              console.log("False");
-          }
-     }
+     })
+})
 
-    
-};
+document.querySelector('.btn').addEventListener('click',(event) => {
+     window.location.reload();
+})
