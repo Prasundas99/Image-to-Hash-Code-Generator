@@ -32,8 +32,6 @@ document.querySelectorAll('.image').forEach((element,index) => {
 })
 
 
-
-
 //Reset Button
 document.querySelector('.btn').addEventListener('click',(event) => {
      window.location.reload();
