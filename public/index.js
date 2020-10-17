@@ -2,37 +2,55 @@ let string = "";
 let codeString = "";
 let maxlength = 40;
 
-document.querySelectorAll('.image').forEach((element,index) => {
-     element.addEventListener('click',(event)=>{
-       
-          
-          if(string.length<maxlength){
 
-               subcode = (event.target.id);
-               codeString = codeString.concat(subcode);
+document.querySelectorAll('.image').forEach((element, index) => {
+     element.addEventListener('click', (event) => {
 
-               
-                    let appendCode = document.createElement('p');
-                    appendCode.innerHTML = codeString;
-                    document.querySelector('.code1').appendChild(appendCode);
-               
-               
-              
-               console.log(index);
-             
+
+          if (string.length < maxlength) {
+
+               const base64String = getBase64Image(event.target);
+
+               console.log(base64String);
+
+               let hash = CryptoJS.MD5(event.target.src).toString().slice(-10);
+               codeString += hash;
+
+
+               let appendCode = document.createElement('p');
+               appendCode.innerHTML = codeString;
+               document.querySelector('.code1').appendChild(appendCode);
+
+
                let image = document.createElement('img');
                image.src = element.src;
                document.querySelector('.code-img').appendChild(image);
 
-               string = string + codeString;
-                 
+               string += codeString;
           }
           codeString = "";
      })
 })
 
 
+
+function getBase64Image(img) {
+
+     // Create an empty canvas element
+     var canvas = document.createElement("canvas");
+
+     canvas.width = img.width;
+     canvas.height = img.height;
+
+     canvas.setAttribute('src', img.src);
+
+     var dataURL = canvas.toDataURL();
+
+     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
+
+
 //Reset Button
-document.querySelector('.btn').addEventListener('click',(event) => {
+document.querySelector('.btn').addEventListener('click', (event) => {
      window.location.reload();
 })
