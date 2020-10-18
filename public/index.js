@@ -1,6 +1,7 @@
 let string = "";
 let codeString = "";
-let maxlength = 40;
+var sha;
+let maxlength = 50;
 
 
 document.querySelectorAll('.image').forEach((element, index) => {
@@ -9,13 +10,22 @@ document.querySelectorAll('.image').forEach((element, index) => {
 
           if (string.length < maxlength) {
 
-               const base64String = getBase64Image(event.target);
+               // const base64String = getBase64Image(event.target);
 
-               console.log(base64String);
+               // console.log(base64String);
 
-               let hash = CryptoJS.MD5(event.target.src).toString().slice(-10);
-               codeString += hash;
+               let hash = CryptoJS.MD5(CryptoJS.enc.Latin1.parse(event.target.src)).toString();
 
+               if (string.length == 39) {
+
+                    sha = CryptoJS.SHA256(hash).toString().slice(-11);
+
+               } else {
+                    sha = CryptoJS.SHA256(hash).toString().slice(-13);
+
+               }
+
+               codeString += sha;
 
                let appendCode = document.createElement('p');
                appendCode.innerHTML = codeString;
@@ -34,20 +44,20 @@ document.querySelectorAll('.image').forEach((element, index) => {
 
 
 
-function getBase64Image(img) {
+// function getBase64Image(img) {
 
-     // Create an empty canvas element
-     var canvas = document.createElement("canvas");
+//      // Create an empty canvas element
+//      var canvas = document.createElement("canvas");
 
-     canvas.width = img.width;
-     canvas.height = img.height;
+//      canvas.width = img.width;
+//      canvas.height = img.height;
 
-     canvas.setAttribute('src', img.src);
+//      canvas.setAttribute('src', img.id);
 
-     var dataURL = canvas.toDataURL();
+//      var dataURL = canvas.toDataURL();
 
-     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
+//      return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+// }
 
 
 //Reset Button
