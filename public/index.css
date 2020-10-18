@@ -1,0 +1,82 @@
+/* Universal css to give colour to the page */
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  background-color: rgb(191, 193, 194);
+}
+
+/*For each header in the page */
+.head {
+  padding: 50px;
+  margin: 20px;
+}
+
+/* For the row of all 36 pictures in the page will displayed in group*/
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-top: 30px;
+  padding-right: 30px;
+  width: 100%;
+}
+
+/* For the row of all 36 pictures in the page will displayed as individual*/
+img {
+  height: 87px;
+  width: 93px;
+  border: 2px solid black;
+  padding: 2px 10px 2px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+img:hover {
+  border: 2px solid rgb(240, 185, 6);
+  cursor: pointer;
+}
+
+/* The pic which will be shown below when clicked */
+.code-img {
+  background-color: white;
+  height: 160px;
+  justify-content: center;
+  padding-top: 30px;
+  display: flex;
+}
+
+/* Align all code-image pics to left */
+.code1 {
+  display: flex;
+  font-size: 24px;
+}
+
+/*For footer section*/
+footer {
+  padding: 90px;
+  text-align: center;
+  background-color: aliceblue;
+  text-decoration-color: black;
+}
+footer a {
+  color: rgb(109, 108, 108);
+}
+
+/*For second page*/
+h2{
+     padding: 20px;
+}
+p{
+     text-align: justify;
+}
+b{
+     text-align: justify;
+     padding: 10px;
+}
