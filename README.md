@@ -1,6 +1,6 @@
 # Image to Hash code Generator 
 
-Link to view the project: 
+Link to view the project: https://prasundas99.github.io/Image-to-Hash-Code-Generator/
 
  A Web-App which converts a pre-defined set of 36 images to hash code 
           You can choose upto four images at once  the hashed passwords are unencryptable .The images are first converted to MD5 hash and then it is converted to SHA-1  and at the end those are  redused to first fifty characters which makes it impossible to crack by any hackers.
